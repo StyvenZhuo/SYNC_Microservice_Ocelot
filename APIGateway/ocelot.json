@@ -1,0 +1,237 @@
+{
+  "Routes": [
+    //Cafe
+    //GET
+    {
+      "DownstreamPathTemplate": "/api/Cafe", // URL API yang kita bikin
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost", // URL dari IIS
+          "Port": 8001 // port yang kita publish di IIS
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Cafe", // URL API yang akan di akses user ( bisa cutom )
+      "UpstreamHttpMethod": [ "GET" ] // methodnya
+    },
+    //Create *
+    {
+      "DownstreamPathTemplate": "/api/Cafe/Create-Cafe",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Cafe/Create-Cafe",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    //Put *
+    {
+      "DownstreamPathTemplate": "/api/Cafe/Update-Cafe/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Cafe/Update-Cafe/{id}",
+      "UpstreamHttpMethod": [ "PUT" ]
+    },
+    //Delete *
+    {
+      "DownstreamPathTemplate": "/api/Cafe/Delete-Cafe/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Cafe/Delete-Cafe/{id}",
+      "UpstreamHttpMethod": [ "DELETE" ]
+    },
+
+
+    //Reservations
+    //GET Admin
+    {
+      "DownstreamPathTemplate": "/api/Reservations",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Reservations",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    //GET HOMEPAGE
+    {
+      "DownstreamPathTemplate": "/api/Reservations/UserId",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Reservations/UserId",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    //Create *
+    {
+      "DownstreamPathTemplate": "/api/Reservations/Reservation",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Reservations/Reservation",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    //Delete *
+    {
+      "DownstreamPathTemplate": "/api/Reservations/Delete-Reservation/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Reservations/Delete-Reservation",
+      "UpstreamHttpMethod": [ "DELETE" ]
+    },
+    //Update *
+    {
+      "DownstreamPathTemplate": "/api/Reservations/Update-Reservation/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Reservations/Update-Reservation/{id}",
+      "UpstreamHttpMethod": [ "PUT" ]
+    },
+
+
+    //Login
+    //Get *
+    {
+      "DownstreamPathTemplate": "/api/Login/Get-Login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Login/Get-Login",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    //Post *
+    {
+      "DownstreamPathTemplate": "/api/Login/authenticate",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Login/authenticate",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    //Post *
+    {
+      "DownstreamPathTemplate": "/api/Login/logout",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Login/logout",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    //GET *
+    {
+      "DownstreamPathTemplate": "/api/Login/test",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Login/test",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+
+    //Registration
+    //Post *
+    {
+      "DownstreamPathTemplate": "/api/Register/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Register/register",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    //GET *
+    {
+      "DownstreamPathTemplate": "/api/Register/{username}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Register/{username}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    //DELETE *
+    {
+      "DownstreamPathTemplate": "/api/Register/Delete-Regis/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Register/Delete-Regis/{id}",
+      "UpstreamHttpMethod": [ "DELETE" ]
+    },
+    //PUT *
+    {
+      "DownstreamPathTemplate": "/api/Register/username",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Register/username",
+      "UpstreamHttpMethod": [ "PUT" ]
+    }
+  ],
+  "GlobalConfiguration": {} // belum penting
+
+}
